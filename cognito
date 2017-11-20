@@ -1,0 +1,6 @@
+poolId: us-east-1_sZvbgPJFA
+poolARN: arn:aws:cognito-idp:us-east-1:838298076961:userpool/us-east-1_sZvbgPJFA
+appClientId: 5idr98o2ete0el2sdb90lh4m2n
+identityPoolId: us-east-1:c0100dcb-2eaf-41a8-91b5-ca47121b4ae7
+apiGatewayRegion: us-east-1
+apiGatewayId: 5kcnk2fmw1

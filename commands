@@ -1,0 +1,23 @@
+aws --profile serverless cognito-idp sign-up \
+  --region us-east-1 \
+  --client-id 5idr98o2ete0el2sdb90lh4m2n \
+  --username admin@example.com \
+  --password Passw0rd!
+
+aws --profile serverless cognito-idp admin-confirm-sign-up \
+  --region us-east-1 \
+  --user-pool-id us-east-1_sZvbgPJFA \
+  --username admin@example.com
+
+apig-test \
+--username='admin@example.com' \
+--password='Passw0rd!' \
+--user-pool-id='us-east-1_sZvbgPJFA' \
+--app-client-id='5idr98o2ete0el2sdb90lh4m2n' \
+--cognito-region='us-east-1' \
+--identity-pool-id='us-east-1:c0100dcb-2eaf-41a8-91b5-ca47121b4ae7' \
+--invoke-url='https://5kcnk2fmw1.execute-api.us-east-1.amazonaws.com/prod' \
+--api-gateway-region='us-east-1' \
+--path-template='/notes' \
+--method='POST' \
+--body='{"content":"hello world","attachment":"hello.jpg"}'
